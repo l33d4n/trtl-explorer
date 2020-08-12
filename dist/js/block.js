@@ -23,7 +23,7 @@ $(document).ready(function () {
       $('#blockTransactionSize').text(numeral(block.transactionsCumulativeSize).format('0,0') + ' bytes')
       $('#blockTransactionFees').text(numeral(block.totalFeeAmount / Math.pow(10, ExplorerConfig.decimalPoints)).format('0,0.00') + ' ' + ExplorerConfig.ticker)
       $('#blockNonce').text(numeral(block.nonce).format('0,0'))
-      $('#previousBlockHash').html('<a href="/block.html?hash=' + block.prevHash + '">' + block.prevHash + '</a>')
+      $('#previousBlockHash').html('<a href="./block.html?hash=' + block.prevHash + '">' + block.prevHash + '</a>')
       $('#transactionCount').text(block.transactions.length)
 
       const now = parseInt((new Date()).getTime() / 1000)
