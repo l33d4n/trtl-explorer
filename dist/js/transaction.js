@@ -2,7 +2,7 @@ $(document).ready(function () {
   const hash = getQueryStringParam('hash')
 
   if (!isHash(hash)) {
-    return window.location = '/?search=' + hash
+    return window.location = './?search=' + hash
   }
 
   $('#checkTransaction').click(function () {
@@ -159,7 +159,7 @@ $(document).ready(function () {
         localData.outputs.draw(false)
       },
       error: function () {
-        window.location = '/?search=' + hash
+        window.location = './?search=' + hash
       }
     })
   })
