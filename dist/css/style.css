@@ -95,3 +95,6 @@ a {
     width:16px;
     height:16px;
 }
+.text-break {
+    display: block!important;
+}
