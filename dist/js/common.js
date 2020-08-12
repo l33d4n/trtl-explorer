@@ -92,7 +92,7 @@ function searchForTerm (term) {
       type: 'GET',
       cache: 'false',
       success: function (data) {
-        window.location = '/block.html?hash=' + data.hash
+        window.location = './block.html?hash=' + data.hash
       },
       error: function () {
         setSearchValueErrorState(true)
