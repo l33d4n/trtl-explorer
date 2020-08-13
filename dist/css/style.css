@@ -18,6 +18,9 @@
 a {
     color: #43b380;
 }
+a:hover {
+    color: #3ca173;
+}
 .btn-primary {
     background-color: #43b380;
     border-color: #43b380;
