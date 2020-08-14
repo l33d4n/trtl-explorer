@@ -40,7 +40,7 @@ a:hover {
     min-height: 650px;
 }
 
-.markdown>table th, .table th {
+.table th {
     font-weight: 600;
     color: #354052;
 }
@@ -100,4 +100,12 @@ a:hover {
 }
 .text-break {
     display: block!important;
+}
+
+.theme-dark .navbar-overlap:after {
+    content: none;
+}
+
+.theme-dark table th {
+    color: #f5f7fb;
 }
