@@ -1,7 +1,7 @@
 # TurtleCoin® Blockchain Explorer
 TurtleCoin® Blockchain Explorer v2020 - Live site: [l33d4n.github.io/trtl-explorer/](https://l33d4n.github.io/trtl-explorer/)
 
-![screely-1597280106384](https://user-images.githubusercontent.com/8020386/90082583-b4da3200-dd42-11ea-8363-5bfea388f2b6.png)
+![screely-1597473876236](https://user-images.githubusercontent.com/8020386/90307103-efd89300-df05-11ea-87f9-cd511b862613.png)
 
 ### Contributing to TurtleCoin® Blockchain Explorer
 
