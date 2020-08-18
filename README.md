@@ -5,7 +5,7 @@ QbitNetwork® Blockchain Explorer v2020 - Staging: Live site: [](https:///)
 
 ### Contributing to QbitNetwork® Blockchain Explorer
 
-If you are a coder and have some free time perhaps you would like to contribute to Qbit There are many ways you can help or join us:  See here Shortley
+If you are a coder and have some free time perhaps you would like to contribute to Qbit There are many ways you can help or join us:  See here Shortly
 
 
 ### Credits
