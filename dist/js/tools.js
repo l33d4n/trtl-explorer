@@ -39,15 +39,15 @@ $(document).ready(function () {
     generateSignature()
   })
 
-  window.cnUtils = new TurtleCoinUtils.CryptoNote({
+  window.cnUtils = new QbitNetworkUtils.CryptoNote({
     coinUnitPlaces: ExplorerConfig.decimalPoints,
     addressPrefix: ExplorerConfig.addressPrefix
   })
 })
 
 async function generateSignature() {
-  const cnUtil = new TurtleCoinUtils.CryptoNote()
-  const crypto = new TurtleCoinUtils.Crypto()
+  const cnUtil = new QbitNetworkUtils.CryptoNote()
+  const crypto = new QbitNetworkUtils.Crypto()
 
   $('#sign_private').removeClass('is-danger')
 
@@ -66,7 +66,7 @@ async function generateSignature() {
   try {
     const pk = $('#sign_signer').val().trim()
 
-    const address = await TurtleCoinUtils.Address.fromAddress(pk)
+    const address = await QbitNetworkUtils.Address.fromAddress(pk)
 
     if (address.spend.publicKey !== public_key) {
       $('#sign_signer').val(public_key)
@@ -79,8 +79,8 @@ async function generateSignature() {
 }
 
 async function checkSignature() {
-  const cnUtil = new TurtleCoinUtils.CryptoNote()
-  const crypto = new TurtleCoinUtils.Crypto()
+  const cnUtil = new QbitNetworkUtils.CryptoNote()
+  const crypto = new QbitNetworkUtils.Crypto()
 
   const message = $('#sign_message').val().trim()
 
@@ -93,7 +93,7 @@ async function checkSignature() {
 
   if (!await crypto.checkKey(public_key)) {
     try {
-      const address = await TurtleCoinUtils.Address.fromAddress(public_key)
+      const address = await QbitNetworkUtils.Address.fromAddress(public_key)
 
       public_key = address.spend.publicKey
     } catch (e) {
@@ -131,22 +131,22 @@ async function generateWallet(newWallet) {
 
   let wallet
 
-  const crypto = new TurtleCoinUtils.Crypto()
+  const crypto = new QbitNetworkUtils.Crypto()
 
   if (entropy.length !== 0 && newWallet) {
-    wallet = await TurtleCoinUtils.Address.fromEntropy(entropy)
+    wallet = await QbitNetworkUtils.Address.fromEntropy(entropy)
   } else if (seed.length !== 0) {
     if (!isHash(seed) || !await crypto.checkScalar(seed)) {
       return $('#seed').addClass('is-danger')
     }
-    wallet = await TurtleCoinUtils.Address.fromSeed(seed.toLowerCase())
+    wallet = await QbitNetworkUtils.Address.fromSeed(seed.toLowerCase())
   } else if (mnemonic.length !== 0) {
     if ((mnemonic.split(' ')).length !== 25) {
       return $('#mnemonic').addClass('is-danger')
     }
-    wallet = await TurtleCoinUtils.Address.fromMnemonic(mnemonic.toLowerCase())
+    wallet = await QbitNetworkUtils.Address.fromMnemonic(mnemonic.toLowerCase())
   } else if (newWallet) {
-    wallet = await TurtleCoinUtils.Address.fromEntropy()
+    wallet = await QbitNetworkUtils.Address.fromEntropy()
   }
 
   if (!wallet) return
@@ -169,7 +169,7 @@ async function decodeAddress() {
   const walletAddress = $('#walletAddress').val()
 
   try {
-    const addr = await TurtleCoinUtils.Address.fromAddress(walletAddress)
+    const addr = await QbitNetworkUtils.Address.fromAddress(walletAddress)
 
     $('#publicViewKey').val(addr.view.publicKey)
     $('#publicSpendKey').val(addr.spend.publicKey)
@@ -204,7 +204,7 @@ async function encodeAddress() {
   }
 
   try {
-    const addr = await TurtleCoinUtils.Address.fromPublicKeys(publicSpendKey, publicViewKey, paymentId)
+    const addr = await QbitNetworkUtils.Address.fromPublicKeys(publicSpendKey, publicViewKey, paymentId)
     $('#encodedAddress').val(await addr.address())
   } catch (e) {
     $('#encodedAddress').removeClass('is-danger').addClass('is-danger')
@@ -215,7 +215,7 @@ async function generateRandomPaymentID() {
   const entropy = (new Date()).toString()
       .toUpperCase()
 
-  const random = await TurtleCoinUtils.Address.generateSeed(entropy)
+  const random = await QbitNetworkUtils.Address.generateSeed(entropy)
 
   $('#paymentId').val(random)
 }

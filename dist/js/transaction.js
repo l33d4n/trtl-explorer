@@ -23,12 +23,12 @@ $(document).ready(function () {
     }
   })
 
-  window.cnUtils = new TurtleCoinUtils.CryptoNote({
+  window.cnUtils = new QbitNetworkUtils.CryptoNote({
     coinUnitPlaces: ExplorerConfig.decimalPoints,
     addressPrefix: ExplorerConfig.addressPrefix
   })
 
-  TurtleCoinUtils.on('ready', () => {
+  QbitNetworkUtils.on('ready', () => {
     $.ajax({
       url: ExplorerConfig.apiBaseUrl + '/transaction/' + hash,
       dataType: 'json',
@@ -59,13 +59,13 @@ $(document).ready(function () {
          * that is available in the interface
          */
         if (txn.tx.mixin === 0 && txn.tx.fee === 0 && txn.tx.inputs.length === 1) {
-          const transaction = new TurtleCoinUtils.Transaction()
+          const transaction = new QbitNetworkUtils.Transaction()
           await transaction.parseExtra(txn.tx.extra)
 
           if (transaction.recipientPublicSpendKey && transaction.recipientPublicViewKey) {
-            const crypto = new TurtleCoinUtils.Crypto()
+            const crypto = new QbitNetworkUtils.Crypto()
 
-            TurtleCoinUtils.on('ready', async () => {
+            QbitNetworkUtils.on('ready', async () => {
               const fingerprint = await crypto.cn_fast_hash(
                   transaction.recipientPublicSpendKey, transaction.recipientPublicViewKey)
 
@@ -181,7 +181,7 @@ async function checkTransaction() {
   var address;
 
   try {
-    address = await TurtleCoinUtils.Address.fromAddress(recipient)
+    address = await QbitNetworkUtils.Address.fromAddress(recipient)
     if (!address) {
       setRecipientAddressState(true)
       return

@@ -1,9 +1,9 @@
-# TurtleCoin® Blockchain Explorer
-TurtleCoin® Blockchain Explorer v2020 - Live site: [l33d4n.github.io/trtl-explorer/](https://l33d4n.github.io/trtl-explorer/)
+# QbitNetwork® Blockchain Explorer
+QbitNetwork® Blockchain Explorer v2020 - Live site: [l33d4n.github.io/trtl-explorer/](https://l33d4n.github.io/trtl-explorer/)
 
 ![screely-1597473876236](https://user-images.githubusercontent.com/8020386/90307103-efd89300-df05-11ea-87f9-cd511b862613.png)
 
-### Contributing to TurtleCoin® Blockchain Explorer
+### Contributing to QbitNetwork® Blockchain Explorer
 
 We are a community of people across the world giving our time to make this software better. There are many ways you can help or join us:
 
@@ -14,6 +14,6 @@ We are a community of people across the world giving our time to make this softw
 For anyone else wishing to help the community or who needs answers to questions not covered in this document, join us in our [Discord Chat](http://chat.turtlecoin.lol) here.
 
 ### Credits
-- TurtleCoin - [https://github.com/turtlecoin](https://github.com/turtlecoin)
+- QbitNetwork - [https://github.com/turtlecoin](https://github.com/turtlecoin)
 - TurtlePay - [https://github.com/TurtlePay](https://github.com/TurtlePay)
 - Tabler - [https://github.com/tabler/tabler](https://github.com/tabler/tabler)
